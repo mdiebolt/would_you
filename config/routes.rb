@@ -3,6 +3,8 @@ WouldYou::Application.routes.draw do
     root :to => 'devise/registrations#new'
   end
 
+  resources :people
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
