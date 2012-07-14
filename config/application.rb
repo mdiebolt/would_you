@@ -58,5 +58,14 @@ module WouldYou
 
     # Version of your assets, change this if you want to expire all your assets
     config.assets.version = '1.0'
+
+    # Configure generators values. Many other options are available, be sure to check the documentation.
+    config.generators do |g|
+      g.assets          false
+      g.helper          false
+      g.orm             :active_record
+      g.template_engine :haml
+      g.test_framework  :test_unit, :fixture => false
+    end
   end
 end

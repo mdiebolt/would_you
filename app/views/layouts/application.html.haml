@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+%html
+  %head
+    %title Would You
+    = stylesheet_link_tag    "application", :media => "all"
+    = javascript_include_tag "application"
+    = csrf_meta_tags
+    %meta(name='viewport' content='width=device-width, intial-scale=1.0')
+  %body
+    .navbar.navbar-fixed-top
+      .navbar-inner
+        .container
+          %a.btn.btn-navbar(data-toggle='collapse' data-target='.nav-collapse')
+            %span.icon-bar
+            %span.icon-bar
+            %span.icon-bar
+          %a.brand(href='#') Some Stuff
+          .nav-collapse
+            %ul.nav
+              %li
+                %a(href='#') One
+              %li
+                %a(href='#') Two
+              %li
+                %a(href='#') Three
+
+    .container-fluid
+      .row
+        .span9
+          =yield
+        .span3
+          %h2 About us
+          Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod
+          tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam,
+          quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo
+          consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse
+          cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non
+          proident, sunt in culpa qui officia deserunt mollit anim id est laborum.

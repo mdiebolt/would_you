@@ -1,4 +1,8 @@
 WouldYou::Application.routes.draw do
+  devise_for :people do
+    root :to => 'devise/registrations#new'
+  end
+
   # The priority is based upon order of creation:
   # first created -> highest priority.
 
