@@ -2,6 +2,7 @@
 %html
   %head
     %title Would You
+    = javascript_include_tag "http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js"
     = stylesheet_link_tag    "application", :media => "all"
     = javascript_include_tag "application"
     = csrf_meta_tags
@@ -14,15 +15,13 @@
             %span.icon-bar
             %span.icon-bar
             %span.icon-bar
-          %a.brand(href='#') Some Stuff
+          %a.brand(href='#') Would You?
           .nav-collapse
-            %ul.nav
-              %li
-                %a(href='#') One
-              %li
-                %a(href='#') Two
-              %li
-                %a(href='#') Three
+            %ul.nav.pull-right
+              - if person_signed_in?
+                %li= link_to('Logout', destroy_person_session_path, :method => :delete)
+              - else
+                %li= link_to('Login', new_person_session_path)
 
     .container-fluid
       .row
